@@ -237,31 +237,40 @@ class SideMenu extends StatelessWidget {
                         },
                         child:
                             Image.asset('assets/images/icons8-linkedin-48.png'),
-                      ), 
+                      ),
 
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
 
-                       GestureDetector(
+                      GestureDetector(
                         onTap: () {
                           // ignore: deprecated_member_use
                           launch(
                               "https://www.linkedin.com/in/gaurav-singh-b710a1291/");
                         },
-                        child:
-                            Image.asset('assets/images/instagram.png',   height: 40,width: 40,),
-                      ), 
-                      SizedBox(width: 20,),
+                        child: Image.asset(
+                          'assets/images/instagram.png',
+                          height: 40,
+                          width: 40,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
 
-
-                       GestureDetector(
+                      GestureDetector(
                         onTap: () {
                           // ignore: deprecated_member_use
                           launch(
                               "https://www.linkedin.com/in/gaurav-singh-b710a1291/");
                         },
-                        child:
-                            Image.asset('assets/images/github.png', height: 45,width: 45,),
-                      ), 
+                        child: Image.asset(
+                          'assets/images/github.png',
+                          height: 45,
+                          width: 45,
+                        ),
+                      ),
                     ],
                   ),
                 )
