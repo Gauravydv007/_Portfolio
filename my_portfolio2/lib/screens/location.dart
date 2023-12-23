@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-
 class LocationInfo extends StatelessWidget {
   const LocationInfo({
-    super.key, this.title, this.text,
+    super.key,
+    this.title,
+    this.text,
   });
   final String? title, text;
 
@@ -11,14 +12,13 @@ class LocationInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    
       children: [
-        Text(title!, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold), ),
-    
+        Text(
+          title!,
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         Text(text!),
-    
       ],
     );
   }
 }
-

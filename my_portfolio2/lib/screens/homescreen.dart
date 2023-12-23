@@ -10,23 +10,19 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      appBar: Responsive.isDesktop(context)  // here appbar getting hide
-      ? null : AppBar(  
-        backgroundColor: bgColor,
-        leading:  Builder(
-          builder: (context) =>
-          IconButton(
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-          icon: Icon(Icons.menu)
-          ),
-          ),
-         
-        
-      ),
+      appBar: Responsive.isDesktop(context) // here appbar getting hide
+          ? null
+          : AppBar(
+              backgroundColor: bgColor,
+              leading: Builder(
+                builder: (context) => IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    icon: Icon(Icons.menu)),
+              ),
+            ),
       drawer: SideMenu(),
       body: Center(
         child: Container(
@@ -34,34 +30,24 @@ class MainScreen extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if(Responsive.isDesktop(context))
-              Expanded(
-                flex: 2,  // take 75%
-                child: SideMenu(),
-                ),
-          
+              if (Responsive.isDesktop(context))
                 Expanded(
-                  flex: 7,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                       ...children,
-
-                    ],
-                  ),
-
-                )
-                  
-                
+                  flex: 2, // take 75%
+                  child: SideMenu(),
                 ),
-          
-          
+              Expanded(
+                  flex: 7,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        ...children,
+                      ],
+                    ),
+                  )),
             ],
-          
           ),
         ),
-      ) ,
-
+      ),
     );
   }
 }
