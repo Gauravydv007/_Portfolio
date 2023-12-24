@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       children: [
       // all things bound this page
       AspectRatio(
-        aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
+        aspectRatio: Responsive.isMobile(context) ? 2 : 3,
         child: Stack(fit: StackFit.expand, children: [
           Image.asset(
             'assets/images/flat-lay-workstation-with-copy-space-laptop.jpg',
@@ -29,72 +29,78 @@ class HomeScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 10),
-                  child: Text('This is my Amazing Art Space!!',
-                      style: Responsive.isDesktop(context)
-                          ? Theme.of(context).textTheme.headline3!.copyWith(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, top: 10),
+                    child: Text('This is my Amazing Art Space!!',
+                        style: Responsive.isDesktop(context)
+                            ? Theme.of(context).textTheme.headline3!.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                )
+                            : Theme.of(context).textTheme.headline5!.copyWith(
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              )
-                          : Theme.of(context).textTheme.headline5!.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
-                ),
-                if (!Responsive.isMobileLarge(context))
-                  SizedBox(
-                    height: defaultPadding / 2,
+                                color: Colors.white)),
                   ),
-                DefaultTextStyle(
-                  style: Theme.of(context).textTheme.subtitle1!,
-                  maxLines: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 18, top: 20),
-                    child: Row(
-                      children: [
-                        if (!Responsive.isMobileLarge(context))
-                          Text.rich(
-                            TextSpan(text: "<", children: [
-                              TextSpan(
-                                  text: "Flutter",
-                                  style: TextStyle(color: primaryColor)),
-                              TextSpan(text: '> ')
-                            ]),
-                          ),
-                        if (!Responsive.isMobileLarge(context))
-                          SizedBox(
-                            height: defaultPadding,
-                          ),
-                        Text('I Build :- '),
-                        Expanded(child: AnimatedText()),
-                      ],
+                  if (!Responsive.isMobileLarge(context))
+                    SizedBox(
+                      height: defaultPadding / 2,
+                    ),
+                  DefaultTextStyle(
+                    style: Theme.of(context).textTheme.subtitle1!,
+                    maxLines: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 18, top: 20),
+                      child: Row(
+                        children: [
+                          if (!Responsive.isMobileLarge(context))
+                            Text.rich(
+                              TextSpan(text: "<", children: [
+                                TextSpan(
+                                    text: "Flutter",
+                                    style: TextStyle(color: primaryColor)),
+                                TextSpan(text: '> ')
+                              ]),
+                            ),
+                          if (!Responsive.isMobileLarge(context))
+                            SizedBox(
+                              height: defaultPadding,
+                            ),
+                          Text('I Build :- '),
+                          Expanded(child: AnimatedText()),
+                          // if(!Responsive.isMobile(context))
+                          // SizedBox(height: defaultPadding,)
+                          
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: defaultPadding),
-                if (!Responsive.isMobileLarge(context))
-                  ElevatedButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                        backgroundColor: primaryColor,
-                      ),
-                      child: Text(
-                        'EXPLORE NOW',
-                        style: TextStyle(color: darkColor),
-                      ))
-              ],
+                  if(!Responsive.isMobileLarge(context))
+                  SizedBox(height: defaultPadding),
+                  if (!Responsive.isMobileLarge(context))
+                    ElevatedButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                          backgroundColor: primaryColor,
+                        ),
+                        child: Text(
+                          'EXPLORE NOW',
+                          style: TextStyle(color: darkColor),
+                        ))
+                ],
+              ),
             ),
           )
         ]),
       ),
 
       Padding(
-        padding: const EdgeInsets.all(defaultPadding),
+        padding: const EdgeInsets.all(8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
