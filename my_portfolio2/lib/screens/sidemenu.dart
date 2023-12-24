@@ -247,7 +247,7 @@ class SideMenu extends StatelessWidget {
                         onTap: () {
                           // ignore: deprecated_member_use
                           launch(
-                              "https://www.linkedin.com/in/gaurav-singh-b710a1291/");
+                              "https://www.instagram.com/gauravsingh_yaduvanshi007?utm_source=qr&igsh=MTRraXI2cnFxbzY1ZQ==");
                         },
                         child: Image.asset(
                           'assets/images/instagram.png',
@@ -263,7 +263,7 @@ class SideMenu extends StatelessWidget {
                         onTap: () {
                           // ignore: deprecated_member_use
                           launch(
-                              "https://www.linkedin.com/in/gaurav-singh-b710a1291/");
+                              "https://github.com/Gauravydv007");
                         },
                         child: Image.asset(
                           'assets/images/github.png',
