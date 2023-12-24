@@ -4,13 +4,14 @@ import 'package:my_portfolio2/const.dart';
 
 class AnimatedLinearProgressIndicator extends StatelessWidget {
   const AnimatedLinearProgressIndicator({
-    super.key,
+    Key ? key,
     required this.percentage,
-    required this.label,
-  });
+    required this.label, required this.color,
+  }):super(key: key);
 
   final double percentage;
   final String label;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
                 ),
                 LinearProgressIndicator(
                   value: value,
-                  color: primaryColor,
+                  color: color,
                   backgroundColor: darkColor,
                 )
               ],

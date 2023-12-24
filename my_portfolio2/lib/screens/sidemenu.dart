@@ -59,9 +59,10 @@ class SideMenu extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: AnimatedCircularIndicator(
-                        percentage: 0.83,
+                      child: const AnimatedCircularIndicator(
+                        percentage: 0.86,
                         label: 'Flutter',
+                        color: Color.fromARGB(255, 119, 236, 122),
                       ),
                     ),
                     SizedBox(
@@ -71,6 +72,7 @@ class SideMenu extends StatelessWidget {
                       child: AnimatedCircularIndicator(
                         percentage: 0.64,
                         label: 'Firebase',
+                        color: primaryColor,
                       ),
                     ),
                     SizedBox(
@@ -80,6 +82,7 @@ class SideMenu extends StatelessWidget {
                       child: AnimatedCircularIndicator(
                         percentage: 0.30,
                         label: 'Rust',
+                        color: Colors.red,
                       ),
                     ),
                   ],
@@ -102,13 +105,16 @@ class SideMenu extends StatelessWidget {
                 AnimatedLinearProgressIndicator(
                   percentage: 0.7,
                   label: "Dart",
+                  color: primaryColor,
                 ),
                 SizedBox(
                   height: 15,
                 ),
                 AnimatedLinearProgressIndicator(
-                  percentage: 0.4,
+                  percentage: 0.3,
                   label: "Rust",
+                  color: const Color.fromARGB(255, 244, 87, 76),
+
                 ),
                 SizedBox(
                   height: 15,
@@ -116,6 +122,7 @@ class SideMenu extends StatelessWidget {
                 AnimatedLinearProgressIndicator(
                   percentage: 0.95,
                   label: "C++",
+                  color: const Color.fromARGB(255, 122, 239, 126),
                 ),
                 SizedBox(
                   height: 15,
@@ -123,6 +130,7 @@ class SideMenu extends StatelessWidget {
                 AnimatedLinearProgressIndicator(
                   percentage: 0.8,
                   label: "HTML",
+                  color: primaryColor,
                 ),
                 SizedBox(
                   height: 15,
@@ -130,6 +138,7 @@ class SideMenu extends StatelessWidget {
                 AnimatedLinearProgressIndicator(
                   percentage: 0.6,
                   label: "CSS",
+                  color: primaryColor,
                 ),
                 SizedBox(
                   height: 20,
