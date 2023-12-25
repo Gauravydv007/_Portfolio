@@ -20,12 +20,14 @@ class _MyImageSliderState extends State<MyImageSlider> {
         height: 150,
         width: 350,
         decoration: BoxDecoration(
-            color: const Color.fromARGB(31, 43, 42, 42),
+            color: Color.fromARGB(31, 72, 72, 72),
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               new BoxShadow(
-                color: Colors.black,
-                blurRadius: 20.0,
+                // color: const Color.fromARGB(255, 245, 90, 90),
+                blurRadius: 10.0,
+                offset: Offset(10 , 7),
+                
               ),
             ]),
         child: SingleChildScrollView(
@@ -65,7 +67,8 @@ class _MyImageSliderState extends State<MyImageSlider> {
             boxShadow: [
               new BoxShadow(
                 color: Colors.black,
-                blurRadius: 20.0,
+                blurRadius: 10.0,
+                 offset: Offset(10 , 7),
               ),
             ]),
         child: SingleChildScrollView(
@@ -105,7 +108,8 @@ class _MyImageSliderState extends State<MyImageSlider> {
             boxShadow: [
               new BoxShadow(
                 color: Colors.black,
-                blurRadius: 20.0,
+                blurRadius: 10.0,
+                 offset: Offset(10 , 7),
               ),
             ]),
         child: SingleChildScrollView(

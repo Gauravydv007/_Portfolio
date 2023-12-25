@@ -7,6 +7,7 @@ import 'package:my_portfolio2/resposive.dart';
 import 'package:my_portfolio2/screens/homescreen.dart';
 import 'package:my_portfolio2/screens/main_screen/Qualifications.dart';
 import 'package:my_portfolio2/screens/main_screen/animatedcounter.dart';
+import 'package:my_portfolio2/screens/main_screen/project_grid&card.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -147,6 +148,20 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
 
+        Text(
+        "Qualifications",
+        style: TextStyle(
+            fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),
+      ),
+
+      SizedBox(height: defaultPadding),
+
+
+          Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: MyImageSlider(),
+      ),
+
       Text(
         "My Projects",
         style: TextStyle(
@@ -171,31 +186,11 @@ class HomeScreen extends StatelessWidget {
         height: defaultPadding,
       ),
 
-      Text(
-        "Qualifications",
-        style: TextStyle(
-            fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),
-      ),
+    
 
-      SizedBox(height: defaultPadding),
 
-      //    Responsive(
-      // mobile: ProjectGridView2(
-      //   crossAxisCount: 1,
-      //   childAspectRatio: 2,
-      // ),
-      // mobileLarge: ProjectGridView2(
-      //   crossAxisCount: 2,
-      //   // childAspectRatio: 2,
-      // ),
-      // tablet: ProjectGridView2(childAspectRatio: 1.1),
-      // desktop: ProjectGridView2()
-      // ),
 
-      Padding(
-        padding: const EdgeInsets.only(bottom: 20),
-        child: MyImageSlider(),
-      )
+  
     ]
     );
   }
@@ -251,35 +246,7 @@ class AnimatedText extends StatelessWidget {
 //   }
 // }
 
-class ProjectGridView extends StatelessWidget {
-  const ProjectGridView({
-    Key? key,
-    this.crossAxisCount = 3,
-    this.childAspectRatio = 1.3,
-  }) : super(key: key);
 
-  final int crossAxisCount;
-  final double childAspectRatio;
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: demo_projects.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-          childAspectRatio: childAspectRatio,
-          crossAxisSpacing: defaultPadding,
-          mainAxisSpacing: defaultPadding,
-        ),
-        itemBuilder: (context, index) => SingleChildScrollView(
-              child: ProjectCard(
-                project: demo_projects[index],
-              ),
-            ));
-  }
-}
 
 // class ProjectCard2 extends StatelessWidget {
 //   const ProjectCard2({
@@ -319,40 +286,3 @@ class ProjectGridView extends StatelessWidget {
 //   }
 // }
 
-class ProjectCard extends StatelessWidget {
-  const ProjectCard({
-    super.key,
-    required this.project,
-  });
-  final Project project;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(defaultPadding),
-      color: secondaryColor,
-      child: Column(
-        children: [
-          Text(
-            project.title!,
-            maxLines: 2,
-            style: Theme.of(context).textTheme.titleSmall,
-          ),
-          SizedBox(
-            height: defaultPadding,
-          ),
-          Text(
-            project.description!,
-            maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(height: 1.5),
-          ),
-          SizedBox(
-            height: defaultPadding,
-          ),
-          TextButton(onPressed: () {}, child: Text("Read More>>"))
-        ],
-      ),
-    );
-  }
-}
