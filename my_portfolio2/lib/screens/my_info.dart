@@ -78,7 +78,7 @@ class _MyInfoState extends State<MyInfo> {
                   ),
                   CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage('assets/images/my_image.png'),
+                    backgroundImage: AssetImage('assets/images/EB16AC5A-F5C3-40D3-BC64-F56D4128CF49.jpeg'),
                   ),
                   // Text('Gaurav'),
                   // Text(
@@ -190,7 +190,7 @@ class _MyInfoState extends State<MyInfo> {
                             });
                           },
                           child: Image.asset(
-                            'assets/images/my_image.png',
+                            'assets/images/EB16AC5A-F5C3-40D3-BC64-F56D4128CF49.jpeg',
                             width: 190,
                             height: 180,
                           ),
