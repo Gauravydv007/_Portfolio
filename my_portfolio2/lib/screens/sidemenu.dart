@@ -183,7 +183,7 @@ class SideMenu extends StatelessWidget {
                       width: 15,
                     ),
                     Text(
-                      'Stylus, Sass , Less',
+                      'Stylus, Sass , Figma, Blob',
                       style: TextStyle(color: primaryColor),
                     ),
                   ],

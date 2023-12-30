@@ -9,13 +9,19 @@ import 'package:my_portfolio2/screens/main_screen/Qualifications.dart';
 import 'package:my_portfolio2/screens/main_screen/animatedcounter.dart';
 import 'package:my_portfolio2/screens/main_screen/project_grid&card.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:my_portfolio2/screens/main_screen/Qualifications.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MainScreen(
+    double width = MediaQuery.of(context).size.width;
+       return MainScreen(
+        key: key,
+          controller: ScrollController(), 
+      
       children: [
       // all things bound this page
       AspectRatio(
@@ -36,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 15, top: 10),
-                    child: Text('This is my Amazing Art Space!!',
+                    child: Text('Welcome to my Amazing Art Space!!',
                         style: Responsive.isDesktop(context)
                             ? Theme.of(context).textTheme.headline3!.copyWith(
                                   fontWeight: FontWeight.bold,
@@ -107,7 +113,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             Row(children: [
               AnimatedCounter(
-                value: 80,
+                value: 40,
                 text: "+",
               ),
               SizedBox(
@@ -147,6 +153,94 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+
+      AspectRatio(aspectRatio:  Responsive.isMobile(context) ? 2 : 3,
+      
+      child: Row(
+        
+
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+
+         
+
+          Column(
+            children: [
+
+               Padding(
+                 padding: const EdgeInsets.only(top: 40),
+                 child: Text('Hii! 👋🏻', style: TextStyle(fontSize: width * 0.030, color: Colors.white),),
+               ),
+               
+              Padding(
+                      padding: const EdgeInsets.only(
+                        left: 5, right: 5
+                      ),
+                      child: Row(
+                        
+                        children: [
+                          
+                          Text("I'm ", style: TextStyle(fontSize: width* 0.040, fontWeight: FontWeight.bold, color: Colors.white),),
+                          GradientText(
+                            'Gaurav Yadav',
+                            style: TextStyle(fontSize: width* 0.05, fontWeight: FontWeight.bold),
+                            colors: [
+                              Colors.blue,
+                              // Colors.red,
+                              Colors.yellow,
+                          
+                            ],
+                          ),
+                         
+                        ],
+                      ),
+              ),
+
+               Text('Flutter Developer', style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic, fontSize: width*0.030),)
+            ],
+          ),
+
+
+
+          Stack(
+            children: [
+              
+                
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 0),
+                  child: Image.asset('assets/images/Vector (3).png', height: 500,),
+                ),
+              
+
+
+              
+              Container(
+                margin: EdgeInsets.only(top:0, left: 25),
+                child: ShaderMask(
+                  shaderCallback: (rect){
+                    return LinearGradient(
+                      begin: Alignment.center,
+                      end: Alignment.bottomCenter,
+                      
+                      colors: [Colors.black, Colors.transparent])
+                    .createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
+                  },
+                  blendMode: BlendMode.dstIn,
+                  child: Image.asset(
+                             'assets/images/2023-12-30-12-50-24-229.png', 
+                             
+                  fit: BoxFit.cover,
+                              
+                              ),
+                ),
+              ),
+            ]
+          )
+
+        ],
+      ),
+       ),
 
         Text(
         "Qualifications",
@@ -196,6 +290,13 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+
+
+
+
+
+
+
 class AnimatedText extends StatelessWidget {
   const AnimatedText({
     super.key,
@@ -216,73 +317,6 @@ class AnimatedText extends StatelessWidget {
   }
 }
 
-// class ProjectGridView2 extends StatelessWidget {
-//   const ProjectGridView2({
-//     Key? key,
-//     this.crossAxisCount = 1,
-//     this.childAspectRatio = 1.3,
-//   }) : super(key: key);
-
-//   final int crossAxisCount;
-//   final double childAspectRatio;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GridView.builder(
-//         physics: NeverScrollableScrollPhysics(),
-//         shrinkWrap: true,
-//         itemCount: My_Qualification.length,
-//         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//           crossAxisCount: crossAxisCount,
-//           childAspectRatio: childAspectRatio,
-//           crossAxisSpacing: defaultPadding,
-//           mainAxisSpacing: defaultPadding,
-//         ),
-//         itemBuilder: (context, index) => SingleChildScrollView(
-//               child: ProjectCard2(
-//                 project1: My_Qualification[index],
-//               ),
-//             ));
-//   }
-// }
 
 
-
-// class ProjectCard2 extends StatelessWidget {
-//   const ProjectCard2({
-//     super.key,
-//     required this.project1,
-//   });
-//   final Project2 project1;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: EdgeInsets.all(defaultPadding),
-//       color: secondaryColor,
-//       child: Column(
-//         children: [
-//           Text(
-//             project1.title!,
-//             maxLines: 2,
-//             style: Theme.of(context).textTheme.titleSmall,
-//           ),
-//           SizedBox(
-//             height: defaultPadding,
-//           ),
-//           Text(
-//             project1.description!,
-//             maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
-//             overflow: TextOverflow.ellipsis,
-//             style: TextStyle(height: 1.5),
-//           ),
-//           SizedBox(
-//             height: defaultPadding,
-//           ),
-//           TextButton(onPressed: () {}, child: Text("Read More>>"))
-//         ],
-//       ),
-//     );
-//   }
-// }
 

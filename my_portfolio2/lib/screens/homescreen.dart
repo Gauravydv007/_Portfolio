@@ -4,7 +4,7 @@ import 'package:my_portfolio2/resposive.dart';
 import 'package:my_portfolio2/screens/sidemenu.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key, required this.children}) : super(key: key);
+  const MainScreen({Key? key, required this.children, required ScrollController controller}) : super(key: key);
 
   final List<Widget> children;
 
